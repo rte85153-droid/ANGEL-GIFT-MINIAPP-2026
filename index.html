@@ -6,14 +6,14 @@
 <title>ANGEL GIFT</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#09070f;color:white;font-family:Arial,sans-serif;padding-bottom:85px}
+body{margin:0;background:#09070f;color:white;font-family:Arial,sans-serif;padding-bottom:90px}
 header{padding:20px;display:flex;justify-content:space-between;align-items:center}
 .logo{font-size:23px;font-weight:900;color:#c18aff;letter-spacing:2px}
 .balance{display:flex;gap:8px;padding:10px}
 .money{background:#1b1428;padding:12px;border-radius:13px;border:1px solid #7041a5}
 .banner{margin:15px;padding:25px;border-radius:22px;background:linear-gradient(130deg,#512080,#160e25);border:1px solid #9c64d9}
 .banner h1{font-size:29px}
-button{border:0;border-radius:12px;padding:12px;background:linear-gradient(90deg,#a45aff,#7136c8);color:white;font-weight:bold}
+button{border:0;border-radius:12px;padding:12px;background:linear-gradient(90deg,#a45aff,#7136c8);color:white;font-weight:bold;cursor:pointer}
 h2{margin:22px 18px 12px}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px}
 .card{background:#191222;border:1px solid #59327c;border-radius:17px;padding:14px;text-align:center}
@@ -45,8 +45,8 @@ nav button{background:none;padding:5px;font-size:11px}
 </div>
 <h2>🔥 Популярные розыгрыши</h2>
 <div class="grid">
-<div class="card"><div class="icon">🎁</div><h3>Premium Box</h3><p>128 участников</p><button onclick="alert('Демо: участие пока недоступно')">Участвовать</button></div>
-<div class="card"><div class="icon">💎</div><h3>NFT Crystal</h3><p>86 участников</p><button onclick="alert('Демо: участие пока недоступно')">Участвовать</button></div>
+<div class="card"><div class="icon">🎁</div><h3>Premium Box</h3><p>128 участников</p><button onclick="demo()">Участвовать</button></div>
+<div class="card"><div class="icon">💎</div><h3>NFT Crystal</h3><p>86 участников</p><button onclick="demo()">Участвовать</button></div>
 </div>
 </section>
 <section id="gifts" class="page">
@@ -71,8 +71,8 @@ nav button{background:none;padding:5px;font-size:11px}
 <section id="draws" class="page">
 <h2>🎰 Розыгрыши</h2>
 <div class="grid">
-<div class="card"><div class="icon">🎁</div><h3>Premium Box</h3><p>128 участников</p><p class="gold">02:14:36</p><button onclick="alert('Демо-версия')">Участвовать</button></div>
-<div class="card"><div class="icon">💎</div><h3>NFT Crystal</h3><p>86 участников</p><p class="gold">01:08:22</p><button onclick="alert('Демо-версия')">Участвовать</button></div>
+<div class="card"><div class="icon">🎁</div><h3>Premium Box</h3><p>128 участников</p><p class="gold">02:14:36</p><button onclick="demo()">Участвовать</button></div>
+<div class="card"><div class="icon">💎</div><h3>NFT Crystal</h3><p>86 участников</p><p class="gold">01:08:22</p><button onclick="demo()">Участвовать</button></div>
 </div>
 </section>
 <section id="profile" class="page">
@@ -95,8 +95,11 @@ nav button{background:none;padding:5px;font-size:11px}
 <script>
 function openPage(id){
 document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-document.getElementById(id).classList.add('active');
-window.scrollTo(0,0);
+const page=document.getElementById(id);
+if(page){page.classList.add('active');window.scrollTo(0,0);}
+}
+function demo(){
+alert('Это демонстрационная версия ANGEL GIFT. Функция пока не подключена.');
 }
 </script>
 </body>
