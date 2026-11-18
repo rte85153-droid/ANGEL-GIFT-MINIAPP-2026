@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANGEL GIFT</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#09070f;color:white;font-family:Arial,sans-serif;padding-bottom:85px}
+header{padding:20px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:23px;font-weight:900;color:#c18aff;letter-spacing:2px}
+.balance{display:flex;gap:8px;padding:10px}
+.money{background:#1b1428;padding:12px;border-radius:13px;border:1px solid #7041a5}
+.banner{margin:15px;padding:25px;border-radius:22px;background:linear-gradient(130deg,#512080,#160e25);border:1px solid #9c64d9}
+.banner h1{font-size:29px}
+button{border:0;border-radius:12px;padding:12px;background:linear-gradient(90deg,#a45aff,#7136c8);color:white;font-weight:bold}
+h2{margin:22px 18px 12px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px}
+.card{background:#191222;border:1px solid #59327c;border-radius:17px;padding:14px;text-align:center}
+.icon{font-size:43px;padding:17px}
+.card h3{font-size:15px}
+.card p{color:#b9a9c9;font-size:12px}
+nav{position:fixed;bottom:0;left:0;width:100%;background:#120d1b;display:flex;justify-content:space-around;padding:13px 3px;border-top:1px solid #57347a}
+nav button{background:none;padding:5px;font-size:11px}
+.page{display:none}
+.page.active{display:block}
+.gold{color:#f4cd77}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">👼 ANGEL GIFT</div>
+<div>👤</div>
+</header>
+<div class="balance">
+<div class="money">💎 12.50 TON</div>
+<div class="money">⭐ 250 Stars</div>
+</div>
+<section id="home" class="page active">
+<div class="banner">
+<p class="gold">WELCOME TO ANGEL GIFT</p>
+<h1>Твой шанс на подарок!</h1>
+<p>NFT, подарки и розыгрыши в одном месте.</p>
+<button onclick="openPage('gifts')">Смотреть подарки</button>
+</div>
+<h2>🔥 Популярные розыгрыши</h2>
+<div class="grid">
+<div class="card"><div class="icon">🎁</div><h3>Premium Box</h3><p>128 участников</p><button onclick="alert('Демо: участие пока недоступно')">Участвовать</button></div>
+<div class="card"><div class="icon">💎</div><h3>NFT Crystal</h3><p>86 участников</p><button onclick="alert('Демо: участие пока недоступно')">Участвовать</button></div>
+</div>
+</section>
+<section id="gifts" class="page">
+<h2>🎁 Подарки</h2>
+<div class="grid">
+<div class="card"><div class="icon">💎</div><h3>NFT Crystal</h3><p>Подарок NFT</p></div>
+<div class="card"><div class="icon">🌹</div><h3>Rose</h3><p>Telegram Gift</p></div>
+<div class="card"><div class="icon">🧸</div><h3>Teddy Bear</h3><p>Подарок</p></div>
+<div class="card"><div class="icon">🌙</div><h3>Moon</h3><p>Редкий подарок</p></div>
+</div>
+</section>
+<section id="games" class="page">
+<h2>🎮 Игры</h2>
+<div class="grid">
+<div class="card"><div class="icon">🎁</div><h3>Кейсы</h3><p>Открывай боксы за TON</p></div>
+<div class="card"><div class="icon">💎</div><h3>Upgrade</h3><p>Улучшай подарки</p></div>
+<div class="card"><div class="icon">🎡</div><h3>Колесо</h3><p>Колесо призов</p></div>
+<div class="card"><div class="icon">⚔️</div><h3>PvP</h3><p>Играй против других</p></div>
+<div class="card"><div class="icon">🏆</div><h3>Jackpot</h3><p>Общий приз</p></div>
+</div>
+</section>
+<section id="draws" class="page">
+<h2>🎰 Розыгрыши</h2>
+<div class="grid">
+<div class="card"><div class="icon">🎁</div><h3>Premium Box</h3><p>128 участников</p><p class="gold">02:14:36</p><button onclick="alert('Демо-версия')">Участвовать</button></div>
+<div class="card"><div class="icon">💎</div><h3>NFT Crystal</h3><p>86 участников</p><p class="gold">01:08:22</p><button onclick="alert('Демо-версия')">Участвовать</button></div>
+</div>
+</section>
+<section id="profile" class="page">
+<h2>👤 Профиль</h2>
+<div class="card">
+<div class="icon">👼</div>
+<h3>Telegram User</h3>
+<p>Мои участия: 0</p>
+<p>Мои выигрыши: 0</p>
+<p>Баланс: 12.50 TON</p>
+</div>
+</section>
+<nav>
+<button onclick="openPage('home')">🏠<br>Главная</button>
+<button onclick="openPage('gifts')">🎁<br>Подарки</button>
+<button onclick="openPage('games')">🎮<br>Игры</button>
+<button onclick="openPage('draws')">🎰<br>Розыгрыши</button>
+<button onclick="openPage('profile')">👤<br>Профиль</button>
+</nav>
+<script>
+function openPage(id){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>
